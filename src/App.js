@@ -2,6 +2,7 @@ import React, { useState, useEffect, useReducer } from 'react';
 import TodoList from './components/TodoList';
 import { Context } from './context';
 import reducer, { initialState } from './reducer';
+import ThemeSwitch from './components/ThemeSwitch';
 
 export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -25,16 +26,24 @@ export default function App() {
     <Context.Provider value={{ state, dispatch }}>
       <div className='container'>
         <h1>Твои проблемы</h1>
+        <ThemeSwitch />
         <div className='input-field'>
+          <i className='material-icons prefix'>mode_edit</i>
           <input
+            className='validate'
             type='text'
             value={todoTitle}
             minLength='3'
-            maxLength='150'
+            maxLength='120'
             onChange={(event) => setTodoTitle(event.target.value)}
             onKeyPress={addTodo}
           />
           <label>Чо надо сделать ?</label>
+          <span
+            className='helper-text'
+            data-error='Алло, введи минимум 3 символа!'
+            data-success='Нажми Ввод (Return) (Enter)'
+          />
         </div>
         <TodoList todos={state} />
       </div>

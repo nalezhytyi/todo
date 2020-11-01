@@ -1,8 +1,37 @@
 @import "~materialize-css/dist/css/materialize.min.css";
 
-body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/*THEME: LIGHT MODE --DEFAULT*/
+:root {
+    --text--main: #333333;
+    --text--dimmed: #2d3131;
+
+    --background--main: #f0f5f5;
+    --background--elements: #ccd0d0;
+}
+
+/*THEME: DARK MODE*/
+[data-theme='dark'] {
+    --text--main: #b6b6b6;
+    --text--dimmed: #c4c4c4;
+
+    --background--main: #242727;
+    --background--elements: #1b1d1d;
+
+}
+
+body {
+    color: var(--text--main);
+    background: var(--background--main);
+}
+
+.switch {
+    margin: 30px 0;
 }
 
 .todo {
@@ -15,13 +44,18 @@ body {
 }
 
 .todo label {
+    background-color: var(--background--elements);
+    color: var(--text--dimmed);
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
-    background: #f3f3f3;
     padding: 1rem;
+}
+
+input {
+    color: var(--text--dimmed);
 }
 
 .todo span {
