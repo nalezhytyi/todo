@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useReducer } from 'react';
 import TodoList from './components/TodoList';
-import { Context } from './context';
-import reducer, { initialState } from './reducer';
 import ThemeSwitch from './components/ThemeSwitch';
+import reducer, { initialState } from './reducer';
+import { Context } from './context';
 
 export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState);

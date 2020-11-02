@@ -1,5 +1,18 @@
 export const initialState =
-  localStorage.getItem('todos') == null ? [] : JSON.parse(localStorage.getItem('todos'));
+  localStorage.getItem('todos') == null
+    ? [
+        {
+          id: 1,
+          title: 'покакат',
+          completed: false,
+        },
+        {
+          id: Date.now(),
+          title: 'покушат',
+          completed: true,
+        },
+      ]
+    : JSON.parse(localStorage.getItem('todos'));
 
 export default function reducer(state, action) {
   switch (action.type) {
