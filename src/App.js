@@ -19,10 +19,12 @@ export default function App() {
         payload: todoTitle,
       });
       setTodoTitle('');
-      const input = document.getElementById('adding');
-      input.addEventListener('keyup', (event) => {
-        if (event.which === 13) input.blur();
-      });
+    }
+  };
+
+  const loseFocus = (event) => {
+    if (event.key === 'Enter') {
+      event.target.blur();
     }
   };
 
@@ -41,6 +43,7 @@ export default function App() {
             maxLength='120'
             onChange={(event) => setTodoTitle(event.target.value)}
             onKeyPress={addTodo}
+            onKeyUp={(event) => loseFocus(event)}
           />
           <label>Чо надо сделать ?</label>
           <span
