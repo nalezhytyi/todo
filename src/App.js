@@ -19,6 +19,10 @@ export default function App() {
         payload: todoTitle,
       });
       setTodoTitle('');
+      const input = document.getElementById('adding');
+      input.addEventListener('keyup', (event) => {
+        if (event.which === 13) input.blur();
+      });
     }
   };
 
@@ -29,6 +33,7 @@ export default function App() {
         <ThemeSwitch />
         <div className='input-field'>
           <input
+            id='adding'
             className='validate'
             type='text'
             value={todoTitle}
