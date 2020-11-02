@@ -28,7 +28,6 @@ export default function App() {
         <h1>Твои проблемы</h1>
         <ThemeSwitch />
         <div className='input-field'>
-          <i className='material-icons prefix'>mode_edit</i>
           <input
             className='validate'
             type='text'
