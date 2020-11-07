@@ -1,18 +1,12 @@
 @import "~materialize-css/dist/css/materialize.min.css";
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /*THEME: LIGHT MODE --DEFAULT*/
 :root {
     --text--main: #333333;
     --text--dimmed: #2d3131;
 
-    --background--main: #f0f5f5;
-    --background--elements: #ccd0d0;
+    --background--main: #ccd0d0;
+    --background--elements: #f0f5f5;
 }
 
 /*THEME: DARK MODE*/
@@ -22,7 +16,13 @@
 
     --background--main: #242727;
     --background--elements: #1b1d1d;
+}
 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -36,6 +36,10 @@ body {
 
 .todo-list {
     margin-bottom: 2.8rem;
+}
+
+.input-field label {
+    color: var(--text--dimmed);
 }
 
 .todo {
