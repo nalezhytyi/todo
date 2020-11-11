@@ -5,9 +5,9 @@ import { Slide } from 'react-awesome-reveal';
 const TodoList = ({ todos }) => {
   return (
     <ul className='todo-list'>
-      {todos.map((item) => (
-        <Slide direction='up' triggerOnce>
-          <TodoItem key={item.id} {...item} />
+      {todos.map((todo) => (
+        <Slide direction='up' triggerOnce key={todo.id}>
+          <TodoItem {...todo} todo={todo} />
         </Slide>
       ))}
     </ul>
