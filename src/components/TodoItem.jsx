@@ -32,18 +32,21 @@ export default function TodoItem({ todo }) {
             onChange={() => dispatch({ type: 'toggle', payload: todo.id })}
           />
           <span>{todo.title}</span>
-          <div className='icons-group'>
-            <i className='material-icons' onClick={() => setEdit(true)}>
-              edit
-            </i>
-            <i
-              className='material-icons red-text'
-              onClick={() => dispatch({ type: 'remove', payload: todo.id })}
-            >
-              delete
-            </i>
-          </div>
         </label>
+        <div className='icons-group'>
+          <button
+            className='waves-effect btn-flat btn-floating waves-light'
+            onClick={() => setEdit(true)}
+          >
+            <i className='material-icons'>edit</i>
+          </button>
+          <button
+            className='btn-flat btn-floating'
+            onClick={() => dispatch({ type: 'remove', payload: todo.id })}
+          >
+            <i className='material-icons red-text'>delete</i>
+          </button>
+        </div>
       </li>
     );
   } else {
@@ -62,12 +65,18 @@ export default function TodoItem({ todo }) {
           <span
             className='helper-text'
             data-error='Алло, введи минимум 3 символа!'
-            data-success='Нажми Ввод (Return) (Enter)'
+            data-success='Нажми Ввод (Return) (Enter) или тыцни кнопку справа!'
           />
-          <i className='material-icons' onClick={(event) => saveTodo(event)}>
-            save
-          </i>
         </label>
+        <div className='icons-group'>
+          <button
+            className='btn-large btn-flat waves-effect waves-light btn-floating'
+            disabled={editedTodo.length < 3}
+            onClick={(event) => saveTodo(event)}
+          >
+            <i className='material-icons'>save</i>
+          </button>
+        </div>
       </li>
     );
   }
