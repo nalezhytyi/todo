@@ -28,10 +28,13 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-padding-top: 120px;
+}
+
 body {
     color: var(--text--main);
     background: var(--background--main);
-    min-height: 90vh;
 }
 
 input {
@@ -62,7 +65,7 @@ input {
 
 /*TODOLIST*/
 .todo-list {
-    margin-bottom: 2.8rem;
+    margin-bottom: 2.5rem;
 }
 
 /*TODOITEM*/
@@ -74,10 +77,9 @@ input {
     margin-bottom: 1rem;
     display: flex;
     background-color: var(--background--elements);
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     padding: 1rem;
-
 }
 
 .todo.completed span {
@@ -91,11 +93,13 @@ input {
     overflow-y: auto;
 }
 
-.todo .icons-group {
+.todo .icons-group i {
+    cursor: pointer;
     margin-left: 1rem;
-}
-
-.icons-group button i {
     color: var(--text--dimmed);
-
 }
+
+.todo-editable {
+    align-items: center;
+}
+

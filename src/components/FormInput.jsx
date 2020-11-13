@@ -6,7 +6,7 @@ const FormInput = () => {
 
   const { dispatch } = useContext(Context);
 
-  const addTodo = () => {
+  const addTodo = (e) => {
     if (todoTitle) {
       dispatch({
         type: 'add',
@@ -25,7 +25,7 @@ const FormInput = () => {
           type='text'
           value={todoTitle}
           minLength='1'
-          maxLength='120'
+          maxLength='350'
           onChange={(e) => setTodoTitle(e.target.value)}
           onKeyPress={(e) => (e.key === 'Enter' ? addTodo() : null)}
         />
@@ -37,8 +37,8 @@ const FormInput = () => {
         />
       </div>
       <div className='icons-group'>
-        <button className='btn-flat btn-floating btn-large waves-effect' onClick={addTodo}>
-          <i className='material-icons'>send</i>
+        <button className='btn-floating btn-large waves-effect' onClick={addTodo}>
+          <i className='material-icons'>add</i>
         </button>
       </div>
     </div>

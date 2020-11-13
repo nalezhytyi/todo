@@ -27,7 +27,7 @@ export const initialState =
           completed: true,
         },
         {
-          id: 4,
+          id: 6,
           title: 'edit feature',
           completed: true,
         },

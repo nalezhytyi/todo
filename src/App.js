@@ -15,7 +15,7 @@ export default function App() {
   return (
     <Context.Provider value={{ state, dispatch }}>
       <div className='container'>
-        <h1>Твои проблемы</h1>
+        <h2>Твои проблемы</h2>
         <ThemeSwitch />
         <FormInput />
         <TodoList todos={state} />

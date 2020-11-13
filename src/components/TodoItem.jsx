@@ -43,32 +43,30 @@ export default function TodoItem({ todo }) {
           <span>{todo.title}</span>
         </label>
         <div className='icons-group'>
-          <button
-            className='waves-effect btn-flat btn-floating waves-light'
-            onClick={() => setEdit(true)}
-          >
+          <a href={'#edit'} onClick={() => setEdit(true)}>
             <i className='material-icons'>edit</i>
-          </button>
-          <button
-            className='btn-flat btn-floating'
+          </a>
+          <i
+            className='material-icons red-text'
             onClick={() => dispatch({ type: 'remove', payload: todo.id })}
           >
-            <i className='material-icons red-text'>delete</i>
-          </button>
+            delete
+          </i>
         </div>
       </li>
     );
   } else {
     return (
-      <li className={cls.join(' ')}>
+      <li className='todo todo-editable'>
         <label>
           <input
-            autoFocus={true}
+            autoFocus
+            id='edit'
             className='validate'
             type='text'
             value={editedTodo}
             minLength='1'
-            maxLength='120'
+            maxLength='350'
             onChange={(e) => setEditedTodo(e.target.value)}
             onKeyPress={saveHandler}
             onBlur={saveTodo}
@@ -80,16 +78,9 @@ export default function TodoItem({ todo }) {
           />
         </label>
         <div className='icons-group'>
-          <button
-            className='btn-large btn-flat waves-effect waves-light btn-floating'
-            onClick={saveTodo}
-          >
-            {editedTodo ? (
-              <i className='material-icons'>save</i>
-            ) : (
-              <i className='material-icons red-text'>delete</i>
-            )}
-          </button>
+          <i className='material-icons edit-icon' onClick={saveTodo}>
+            {editedTodo ? 'save' : 'delete'}
+          </i>
         </div>
       </li>
     );
