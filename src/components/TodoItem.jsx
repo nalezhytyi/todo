@@ -12,7 +12,7 @@ export default function TodoItem({ todo }) {
   }
 
   const saveTodo = (event) => {
-    if ((event.key === 'Enter' && event.target.value.length >= 3) || event.type === 'click') {
+    if (event.target.value.length >= 3) {
       dispatch({
         type: 'edit',
         payload: editedTodo,
@@ -59,8 +59,9 @@ export default function TodoItem({ todo }) {
             value={editedTodo}
             minLength='3'
             maxLength='120'
-            onChange={(event) => setEditedTodo(event.target.value)}
-            onKeyPress={saveTodo}
+            onChange={(e) => setEditedTodo(e.target.value)}
+            onKeyPress={(e) => (e.key === 'Enter' ? saveTodo(e) : null)}
+            onBlur={saveTodo}
           />
           <span
             className='helper-text'
