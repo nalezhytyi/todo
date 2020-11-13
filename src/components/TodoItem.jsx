@@ -11,14 +11,22 @@ export default function TodoItem({ todo }) {
     cls.push('completed');
   }
 
-  const saveTodo = (event) => {
-    if (event.target.value.length >= 3) {
+  const saveTodo = () => {
+    setEdit(false);
+    if (editedTodo) {
       dispatch({
         type: 'edit',
         payload: editedTodo,
         todo,
       });
-      setEdit(false);
+    } else {
+      dispatch({ type: 'remove', payload: todo.id });
+    }
+  };
+
+  const saveHandler = (event) => {
+    if (event.key === 'Enter' && event.target.value) {
+      saveTodo();
     }
   };
 
@@ -27,6 +35,7 @@ export default function TodoItem({ todo }) {
       <li className={cls.join(' ')}>
         <label>
           <input
+            className='todo__checkbox'
             type='checkbox'
             checked={todo.completed}
             onChange={() => dispatch({ type: 'toggle', payload: todo.id })}
@@ -54,28 +63,32 @@ export default function TodoItem({ todo }) {
       <li className={cls.join(' ')}>
         <label>
           <input
+            autoFocus={true}
             className='validate'
             type='text'
             value={editedTodo}
-            minLength='3'
+            minLength='1'
             maxLength='120'
             onChange={(e) => setEditedTodo(e.target.value)}
-            onKeyPress={(e) => (e.key === 'Enter' ? saveTodo(e) : null)}
+            onKeyPress={saveHandler}
             onBlur={saveTodo}
           />
           <span
             className='helper-text'
-            data-error='Алло, введи минимум 3 символа!'
+            data-error='Алло, напиши хоть чёто!'
             data-success='Нажми Ввод (Return) (Enter) или тыцни кнопку справа!'
           />
         </label>
         <div className='icons-group'>
           <button
             className='btn-large btn-flat waves-effect waves-light btn-floating'
-            disabled={editedTodo.length < 3}
-            onClick={(event) => saveTodo(event)}
+            onClick={saveTodo}
           >
-            <i className='material-icons'>save</i>
+            {editedTodo ? (
+              <i className='material-icons'>save</i>
+            ) : (
+              <i className='material-icons red-text'>delete</i>
+            )}
           </button>
         </div>
       </li>

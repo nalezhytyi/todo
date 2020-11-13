@@ -7,6 +7,8 @@
 
     --background--main: #ccd0d0;
     --background--elements: #f0f5f5;
+    --background--input: 204, 208, 208;
+
 }
 
 /*THEME: DARK MODE*/
@@ -16,6 +18,7 @@
 
     --background--main: #242727;
     --background--elements: #1b1d1d;
+    --background--input: 36, 39, 39;
 }
 
 /*MAIN STYLES*/
@@ -28,6 +31,7 @@
 body {
     color: var(--text--main);
     background: var(--background--main);
+    min-height: 90vh;
 }
 
 input {
@@ -36,9 +40,17 @@ input {
 
 /*INPUTFIELD*/
 .form-input {
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
     display: flex;
-    align-items: center;
+    align-items: baseline;
+    z-index: 10;
+    background: var(--background--main);
+    background: linear-gradient(0deg, rgba(var(--background--input), 0) 0%, rgba(var(--background--input), 1) 22%);
+
 }
+
 .input-field {
     flex: 1;
 }
@@ -83,7 +95,7 @@ input {
     margin-left: 1rem;
 }
 
-.todo .icons-group button i {
+.icons-group button i {
     color: var(--text--dimmed);
 
 }

@@ -6,14 +6,13 @@ const FormInput = () => {
 
   const { dispatch } = useContext(Context);
 
-  const addTodo = (event) => {
-    if ((event.key === 'Enter' && event.target.value.length >= 3) || event.type === 'click') {
+  const addTodo = () => {
+    if (todoTitle) {
       dispatch({
         type: 'add',
         payload: todoTitle,
       });
       setTodoTitle('');
-      event.target.blur();
     }
   };
 
@@ -25,24 +24,20 @@ const FormInput = () => {
           className='validate'
           type='text'
           value={todoTitle}
-          minLength='3'
+          minLength='1'
           maxLength='120'
-          onChange={(event) => setTodoTitle(event.target.value)}
-          onKeyPress={addTodo}
+          onChange={(e) => setTodoTitle(e.target.value)}
+          onKeyPress={(e) => (e.key === 'Enter' ? addTodo() : null)}
         />
         <label>Чо надо сделать ?</label>
         <span
           className='helper-text'
-          data-error='Алло, введи минимум 3 символа!'
-          data-success='Хочешь еще проблем?'
+          data-error='Алло, напиши хоть чёто!'
+          data-success='Давай, добавь себе ещё проблем!'
         />
       </div>
-      <div>
-        <button
-          className='btn-flat btn-floating btn-large waves-effect'
-          onClick={addTodo}
-          disabled={todoTitle.length < 3}
-        >
+      <div className='icons-group'>
+        <button className='btn-flat btn-floating btn-large waves-effect' onClick={addTodo}>
           <i className='material-icons'>send</i>
         </button>
       </div>

@@ -3,12 +3,32 @@ export const initialState =
     ? [
         {
           id: 1,
-          title: 'покакат',
+          title: 'добавить кнопку очистить все задачи',
           completed: false,
         },
         {
-          id: Date.now(),
-          title: 'покушат',
+          id: 2,
+          title: 'сделать фильтр по completed',
+          completed: false,
+        },
+        {
+          id: 3,
+          title: 'исправить событие onBlur',
+          completed: true,
+        },
+        {
+          id: 4,
+          title: 'сделать sticky input header',
+          completed: true,
+        },
+        {
+          id: 5,
+          title: 'добавить кнопку edit',
+          completed: true,
+        },
+        {
+          id: 4,
+          title: 'edit feature',
           completed: true,
         },
       ]
