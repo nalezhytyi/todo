@@ -64,9 +64,7 @@ input {
 }
 
 /*TODOLIST*/
-.todo-list {
-    margin-bottom: 2.5rem;
-}
+
 
 /*TODOITEM*/
 .input-field label {
@@ -82,7 +80,7 @@ input {
     padding: 1rem;
 }
 
-.todo.completed span {
+.completed {
     text-decoration: line-through;
 }
 
@@ -99,7 +97,12 @@ input {
     color: var(--text--dimmed);
 }
 
-.todo-editable {
+.todo.editable {
     align-items: center;
+}
+
+/*FOOTER*/
+.footer {
+    margin: 2.5rem 0;
 }
 

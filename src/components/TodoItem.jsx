@@ -6,11 +6,6 @@ export default function TodoItem({ todo }) {
   const [editedTodo, setEditedTodo] = useState(todo.title);
   const { dispatch } = useContext(Context);
 
-  const cls = ['todo'];
-  if (todo.completed) {
-    cls.push('completed');
-  }
-
   const saveTodo = () => {
     setEdit(false);
     if (editedTodo) {
@@ -32,15 +27,14 @@ export default function TodoItem({ todo }) {
 
   if (!edit) {
     return (
-      <li className={cls.join(' ')}>
+      <li className='todo'>
         <label>
           <input
-            className='todo__checkbox'
             type='checkbox'
             checked={todo.completed}
             onChange={() => dispatch({ type: 'toggle', payload: todo.id })}
           />
-          <span>{todo.title}</span>
+          <span className={todo.completed ? 'completed' : ''}>{todo.title}</span>
         </label>
         <div className='icons-group'>
           <a href={'#edit'} onClick={() => setEdit(true)}>
@@ -57,7 +51,7 @@ export default function TodoItem({ todo }) {
     );
   } else {
     return (
-      <li className='todo todo-editable'>
+      <li className='todo editable'>
         <label>
           <input
             autoFocus
@@ -70,11 +64,6 @@ export default function TodoItem({ todo }) {
             onChange={(e) => setEditedTodo(e.target.value)}
             onKeyPress={saveHandler}
             onBlur={saveTodo}
-          />
-          <span
-            className='helper-text'
-            data-error='Алло, напиши хоть чёто!'
-            data-success='Нажми Ввод (Return) (Enter) или тыцни кнопку справа!'
           />
         </label>
         <div className='icons-group'>
