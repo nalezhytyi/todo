@@ -6,7 +6,7 @@ const TodoList = ({ todos }) => {
   return (
     <ul className='todo-list'>
       {todos.map((todo) => (
-        <Slide direction='up' triggerOnce key={todo.id}>
+        <Slide triggerOnce key={todo.id}>
           <TodoItem {...todo} todo={todo} />
         </Slide>
       ))}

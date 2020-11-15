@@ -4,17 +4,18 @@
 :root {
     --text--main: #333333;
     --text--dimmed: #2d3131;
+    --text--lighten: #848484;
 
     --background--main: #ccd0d0;
     --background--elements: #f0f5f5;
     --background--input: 204, 208, 208;
-
 }
 
 /*THEME: DARK MODE*/
 [data-theme='dark'] {
     --text--main: #b6b6b6;
     --text--dimmed: #c4c4c4;
+    --text--lighten: #9e9e9e;
 
     --background--main: #242727;
     --background--elements: #1b1d1d;
@@ -39,6 +40,11 @@ body {
 
 input {
     color: var(--text--dimmed);
+}
+
+label {
+    color: var(--text--lighten);
+
 }
 
 /*INPUTFIELD*/
@@ -94,7 +100,7 @@ input {
 .todo .icons-group i {
     cursor: pointer;
     margin-left: 1rem;
-    color: var(--text--dimmed);
+    color: var(--text--lighten);
 }
 
 .todo.editable {
@@ -102,7 +108,19 @@ input {
 }
 
 /*FOOTER*/
-.footer {
-    margin: 2.5rem 0;
+.footer-wrapper {
+    width: 100%;
+
+    color: var(--text--lighten);
+    margin: 2rem 0 3rem;
 }
 
+.footer-wrapper button:disabled {
+    background-color: var(--background--elements) !important;
+}
+
+@media screen and (max-width: 600px) {
+    .footer-wrapper button {
+        margin: 2rem 0;
+    }
+}

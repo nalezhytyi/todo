@@ -28,6 +28,7 @@ export default function reducer(state, action) {
       return state.map((todo) => {
         if (todo.id === action.todo.id) {
           todo.title = action.payload;
+          todo.completed = false;
           return todo;
         }
         return todo;
@@ -35,6 +36,9 @@ export default function reducer(state, action) {
 
     case 'remove':
       return state.filter((todo) => todo.id !== action.payload);
+
+    case 'removeCompletedTodo':
+      return state.filter((todo) => todo.completed === false);
 
     default:
       return state;
