@@ -43,11 +43,11 @@ const Footer = ({ todos }) => {
         <h6>Поздравляю, вы порешали все свои проблемы, и теперь вам нечего делать!</h6>
       ) : (
         <div className='row'>
-          <label className='col s6 m4 l3 center-on-small-only'>
+          <label className='col s6 m4 l3'>
             <input className='filled-in' type='checkbox' onChange={handleChangeAll} />
             <span>Выбрать всe</span>
           </label>
-          <p className='col s6 m4 l6 center'>
+          <p className='col s6 m4 l6 center-align'>
             {unfinishedTodos.length}{' '}
             {declOfNum(unfinishedTodos.length, ['проблема', 'проблемы', 'проблем'])}
           </p>

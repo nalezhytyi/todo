@@ -7,7 +7,15 @@ import FormInput from './components/FormInput';
 import Footer from './components/Footer';
 
 const initialState =
-  localStorage.getItem('todos') == null ? [] : JSON.parse(localStorage.getItem('todos'));
+  localStorage.getItem('todos') == null
+    ? [
+        {
+          id: 1,
+          title: 'Добавить себе ещё проблем',
+          completed: false,
+        },
+      ]
+    : JSON.parse(localStorage.getItem('todos'));
 
 export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState);

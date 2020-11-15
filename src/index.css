@@ -110,9 +110,12 @@ label {
 /*FOOTER*/
 .footer-wrapper {
     width: 100%;
-
     color: var(--text--lighten);
-    margin: 2rem 0 3rem;
+    margin: 3rem 0;
+}
+
+.footer-wrapper h6, p {
+    line-height: 25px;
 }
 
 .footer-wrapper button:disabled {
