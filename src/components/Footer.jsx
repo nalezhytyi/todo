@@ -5,11 +5,11 @@ import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
   const [checkAll, setCheckAll] = useState(false);
-  const { state, dispatch } = useContext(Context);
+  const { state: todos, dispatch } = useContext(Context);
 
   const { t } = useTranslation();
 
-  const unfinishedTodos = state.filter((todo) => todo.completed === false);
+  const unfinishedTodos = todos.filter((todo) => todo.completed === false);
 
   const handleChangeAll = () => {
     dispatch({
@@ -32,7 +32,7 @@ const Footer = () => {
 
   return (
     <div className='footer-wrapper'>
-      {state.length === 0 ? (
+      {todos.length === 0 ? (
         <h6>{t('footer.empty')}</h6>
       ) : (
         <div className='row'>
@@ -48,7 +48,7 @@ const Footer = () => {
             ])}`}
           </p>
           <button
-            disabled={unfinishedTodos.length >= state.length}
+            disabled={unfinishedTodos.length >= todos.length}
             className='waves-effect waves-light btn-small col s12 m4 l3'
             onClick={deleteTodos}
           >
