@@ -1,0 +1,21 @@
+{
+  "translations": {
+    "title": "Your Problem's",
+    "theme": {
+      "dark": "Dark mode",
+      "light": "Light mode"
+    },
+    "formInput": {
+      "label": "What we should do ?",
+      "addMore": "Come on, add some more problems!"
+    },
+    "footer": {
+      "empty": "Congratulations, you solved all your problems and now you have nothing to do!",
+      "problem": "problem",
+      "problems": "problems",
+      "probleme": "problems",
+      "checkAll": "check all",
+      "delete": "delete completed"
+    }
+  }
+}

@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const initialTheme =
   localStorage.getItem('darkMode') == null ? false : JSON.parse(localStorage.getItem('darkMode'));
 
 const ThemeSwitch = () => {
   const [darkMode, setDarkMode] = useState(initialTheme);
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     localStorage.setItem('darkMode', JSON.stringify(darkMode));
@@ -18,7 +21,7 @@ const ThemeSwitch = () => {
       <label>
         <input type='checkbox' checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
         <span className='lever' />
-        {darkMode ? 'Светлая' : 'Темная'} тема
+        {darkMode ? `${t('theme.light')}` : `${t('theme.dark')}`}
       </label>
     </div>
   );
