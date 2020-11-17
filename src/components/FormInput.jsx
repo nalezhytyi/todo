@@ -3,7 +3,6 @@ import { Context } from '../context';
 
 const FormInput = () => {
   const [todoTitle, setTodoTitle] = useState('');
-  console.log(111);
 
   const { dispatch } = useContext(Context);
 

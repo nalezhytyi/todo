@@ -1,10 +1,8 @@
-import React, { useContext, useState } from 'react';
-import { Context } from '../context';
+import React, { useState } from 'react';
 
-export default function TodoItem({ todo }) {
+const TodoItem = ({ todo, dispatch }) => {
   const [edit, setEdit] = useState(false);
   const [editedTodo, setEditedTodo] = useState(todo.title);
-  const { dispatch } = useContext(Context);
 
   const saveTodo = () => {
     setEdit(false);
@@ -74,4 +72,6 @@ export default function TodoItem({ todo }) {
       </li>
     );
   }
-}
+};
+
+export default TodoItem;
