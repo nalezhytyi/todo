@@ -19,8 +19,8 @@ export default function TodoItem({ todo }) {
     }
   };
 
-  const saveHandler = (event) => {
-    if (event.key === 'Enter' && event.target.value) {
+  const saveHandler = (e) => {
+    if (e.key === 'Enter' && e.target.value) {
       saveTodo();
     }
   };

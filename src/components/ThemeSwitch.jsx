@@ -18,7 +18,7 @@ const ThemeSwitch = () => {
       <label>
         <input type='checkbox' checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
         <span className='lever' />
-        Dark {!darkMode ? 'OFF' : 'ON'}
+        {darkMode ? 'Светлая' : 'Темная'} тема
       </label>
     </div>
   );

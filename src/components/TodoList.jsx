@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import TodoItem from './TodoItem';
 import { Slide } from 'react-awesome-reveal';
+import { Context } from '../context';
 
-const TodoList = ({ todos }) => {
+const TodoList = () => {
+  const { state } = useContext(Context);
+
   return (
     <ul className='todo-list'>
-      {todos.map((todo) => (
-        <Slide triggerOnce key={todo.id}>
+      {[...state].reverse().map((todo) => (
+        <Slide direction='down' triggerOnce key={todo.id}>
           <TodoItem {...todo} todo={todo} />
         </Slide>
       ))}
