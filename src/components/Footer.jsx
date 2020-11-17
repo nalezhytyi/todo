@@ -1,10 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { Context } from '../context';
 import { declOfNum } from '../helpers/declareOfNumber';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
   const [checkAll, setCheckAll] = useState(false);
   const { state, dispatch } = useContext(Context);
+
+  const { t } = useTranslation();
 
   const unfinishedTodos = state.filter((todo) => todo.completed === false);
 
@@ -23,21 +26,25 @@ const Footer = () => {
     }
   };
 
+  let problem = `${t('footer.problem')}`;
+  let problems = `${t('footer.problems')}`;
+  let probleme = `${t('footer.probleme')}`;
+
   return (
     <div className='footer-wrapper'>
       {state.length === 0 ? (
-        <h6>Поздравляю, вы порешали все свои проблемы, и теперь вам нечего делать!</h6>
+        <h6>{t('footer.empty')}</h6>
       ) : (
         <div className='row'>
           <label className='col s6 m4 l3'>
             <input className='filled-in' type='checkbox' onChange={handleChangeAll} />
-            <span>выбрать всe</span>
+            <span>{t('footer.checkAll')}</span>
           </label>
           <p className='col s6 m4 l6 center'>
             {`${unfinishedTodos.length} ${declOfNum(unfinishedTodos.length, [
-              'проблема',
-              'проблемы',
-              'проблем',
+              problem,
+              problems,
+              probleme,
             ])}`}
           </p>
           <button
@@ -45,7 +52,7 @@ const Footer = () => {
             className='waves-effect waves-light btn-small col s12 m4 l3'
             onClick={deleteTodos}
           >
-            удалить завершенные
+            {t('footer.delete')}
           </button>
         </div>
       )}

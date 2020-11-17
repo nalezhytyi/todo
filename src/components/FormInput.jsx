@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { Context } from '../context';
+import { useTranslation } from 'react-i18next';
 
 const FormInput = () => {
   const [todoTitle, setTodoTitle] = useState('');
 
+  const { t } = useTranslation();
   const { dispatch } = useContext(Context);
 
   const addTodo = () => {
@@ -29,7 +31,7 @@ const FormInput = () => {
           onChange={(e) => setTodoTitle(e.target.value)}
           onKeyPress={(e) => (e.key === 'Enter' ? addTodo() : null)}
         />
-        <label htmlFor='adding'>Чо надо сделать ?</label>
+        <label htmlFor='adding'>{t('formInput.label')}</label>
         <span className='helper-text' data-success='Давай, добавь себе ещё проблем!' />
       </div>
       <div className='icons-group'>

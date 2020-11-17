@@ -1,0 +1,20 @@
+{
+  "translations": {
+    "title": "Deine Probleme",
+    "theme": {
+      "dark": "Dunkles thema",
+      "light": "Lichtthema"
+    },
+    "formInput": {
+      "label": "Was wir tun sollen ?"
+    },
+    "footer": {
+      "empty": "Herzlichen Glückwunsch, Sie haben alle Ihre Probleme gelöst und jetzt haben Sie nichts mehr zu tun!",
+      "problem": "problem",
+      "problems": "probleme",
+      "probleme": "probleme",
+      "checkAll": "alles auswählen",
+      "delete": "Löschen abgeschlossen"
+    }
+  }
+}

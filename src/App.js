@@ -4,12 +4,17 @@ import FormInput from './components/FormInput';
 import TodoList from './components/TodoList';
 import Footer from './components/Footer';
 import { ContextProvider } from './context';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitch from './components/LanguageSwitch';
 
 const App = () => {
+  const { t } = useTranslation();
+
   return (
     <div className='container'>
-      <h2>Твои проблемы</h2>
+      <h2>{t('title')}</h2>
       <ThemeSwitch />
+      <LanguageSwitch />
       <ContextProvider>
         <FormInput />
         <TodoList />
