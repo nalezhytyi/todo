@@ -44,7 +44,10 @@ input {
 
 label {
     color: var(--text--lighten);
+}
 
+.title {
+    transition: 0.5s;
 }
 
 /*INPUTFIELD*/
@@ -113,9 +116,13 @@ label {
 }
 
 /*FOOTER*/
+
 .footer-wrapper {
     width: 100%;
     color: var(--text--lighten);
+}
+
+.row {
     margin: 3rem 0;
 }
 
@@ -134,5 +141,15 @@ label {
 
     .footer-wrapper p {
         text-align: right;
+    }
+
+    .title {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 385px) {
+    .title {
+        font-size: 40px;
     }
 }

@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <div className='container'>
-      <h2>{t('title')}</h2>
+      <h1 className='title'>{t('title')}</h1>
       <ThemeSwitch />
       <LanguageSwitch />
       <ContextProvider>
