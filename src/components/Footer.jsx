@@ -7,9 +7,9 @@ const Footer = () => {
   const [checkAll, setCheckAll] = useState(false);
   const { state: todos, dispatch } = useContext(Context);
 
-  const unfinishedTodos = todos.filter((todo) => todo.completed === false);
-
   const { t } = useTranslation();
+
+  const unfinishedTodos = todos.filter((todo) => todo.completed === false);
 
   const handleChangeAll = () => {
     dispatch({
