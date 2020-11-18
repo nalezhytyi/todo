@@ -1,6 +1,11 @@
 {
   "translations": {
     "title": "Your Problem's",
+    "settings": {
+      "title": "Settings",
+      "hide": "Hide settings",
+      "show": "Show settings"
+    },
     "theme": {
       "dark": "Dark mode",
       "light": "Light mode"

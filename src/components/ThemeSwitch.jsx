@@ -1,20 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-export const initialTheme =
-  localStorage.getItem('darkMode') == null ? false : JSON.parse(localStorage.getItem('darkMode'));
-
-const ThemeSwitch = () => {
-  const [darkMode, setDarkMode] = useState(initialTheme);
-
+const ThemeSwitch = ({ darkMode, setDarkMode }) => {
   const { t } = useTranslation();
-
-  useEffect(() => {
-    localStorage.setItem('darkMode', JSON.stringify(darkMode));
-    darkMode
-      ? document.querySelector('html').setAttribute('data-theme', 'dark')
-      : document.querySelector('html').removeAttribute('data-theme');
-  }, [darkMode]);
 
   return (
     <div className='switch'>

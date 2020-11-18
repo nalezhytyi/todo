@@ -1,6 +1,11 @@
 {
   "translations": {
     "title": "Deine Probleme",
+    "settings": {
+      "title": "Anpassung",
+      "hide": "Einstellungen ausblenden",
+      "show": "Einstellungen anzeigen"
+    },
     "theme": {
       "dark": "Dunkles thema",
       "light": "Lichtthema"
@@ -14,7 +19,7 @@
       "problem": "problem",
       "problems": "probleme",
       "probleme": "probleme",
-      "checkAll": "alles auswählen",
+      "checkAll": "alles",
       "delete": "Löschen abgeschlossen"
     }
   }

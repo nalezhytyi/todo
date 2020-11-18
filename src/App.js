@@ -1,11 +1,10 @@
 import React from 'react';
-import ThemeSwitch from './components/ThemeSwitch';
 import FormInput from './components/FormInput';
 import TodoList from './components/TodoList';
 import Footer from './components/Footer';
 import { ContextProvider } from './context';
 import { useTranslation } from 'react-i18next';
-import LanguageSwitch from './components/LanguageSwitch';
+import Settings from './components/Settings';
 
 const App = () => {
   const { t } = useTranslation();
@@ -13,8 +12,7 @@ const App = () => {
   return (
     <div className='container'>
       <h1 className='title'>{t('title')}</h1>
-      <ThemeSwitch />
-      <LanguageSwitch />
+      <Settings />
       <ContextProvider>
         <FormInput />
         <TodoList />

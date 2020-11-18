@@ -1,16 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-export const initialLanguage =
-  localStorage.getItem('language') == null ? 'ru' : JSON.parse(localStorage.getItem('language'));
-
-const LanguageSwitch = () => {
-  const [language, setLanguage] = useState(initialLanguage);
+const LanguageSwitch = ({ language, setLanguage }) => {
   const { i18n } = useTranslation();
-
-  useEffect(() => {
-    localStorage.setItem('language', JSON.stringify(language));
-  }, [language, i18n]);
 
   const onLanguageHandle = (e) => {
     let newLang = e.target.value;
@@ -19,8 +11,8 @@ const LanguageSwitch = () => {
   };
 
   return (
-    <div>
-      <p>
+    <ul className='switch'>
+      <li>
         <label>
           <input
             value='en'
@@ -32,8 +24,8 @@ const LanguageSwitch = () => {
           />
           <span>English</span>
         </label>
-      </p>
-      <p>
+      </li>
+      <li>
         <label>
           <input
             value='ru'
@@ -45,8 +37,8 @@ const LanguageSwitch = () => {
           />
           <span>Русский</span>
         </label>
-      </p>
-      <p>
+      </li>
+      <li>
         <label>
           <input
             value='de'
@@ -58,8 +50,8 @@ const LanguageSwitch = () => {
           />
           <span>Deutsch</span>
         </label>
-      </p>
-    </div>
+      </li>
+    </ul>
   );
 };
 
