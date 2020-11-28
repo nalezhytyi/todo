@@ -77,7 +77,27 @@ label {
 }
 
 /*TODOLIST*/
+.animate-enter .todo {
+    opacity: 0;
+    transform: translateX(-100%);
+}
 
+.animate-enter-active .todo {
+    opacity: 1;
+    transform: translateX(0%);
+    transition: opacity 500ms, transform 500ms;
+}
+
+.animate-exit .todo {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.animate-exit-active .todo {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 500ms, transform 500ms;
+}
 
 /*TODOITEM*/
 .input-field label {
@@ -116,7 +136,6 @@ label {
 }
 
 /*FOOTER*/
-
 .footer-wrapper {
     width: 100%;
     color: var(--text--lighten);
