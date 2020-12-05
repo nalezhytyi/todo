@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { Context } from '../context';
+import { TodosContext } from '../context/todosContext';
 import { useTranslation } from 'react-i18next';
 
 const FormInput = () => {
   const [todoTitle, setTodoTitle] = useState('');
 
   const { t } = useTranslation();
-  const { dispatch } = useContext(Context);
+  const { dispatch } = useContext(TodosContext);
 
   const addTodo = () => {
     if (todoTitle) {

@@ -1,31 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import ThemeSwitch from './ThemeSwitch';
 import LanguageSwitch from './LanguageSwitch';
 import { useTranslation } from 'react-i18next';
 import { Fade } from 'react-awesome-reveal';
-
-export const initialTheme =
-  localStorage.getItem('darkMode') == null ? true : JSON.parse(localStorage.getItem('darkMode'));
-export const initialLanguage =
-  localStorage.getItem('language') == null ? 'ru' : JSON.parse(localStorage.getItem('language'));
+import { SettingsContext } from '../context/settingsContext';
 
 const Settings = () => {
   const [showSettings, setShowSettings] = useState(false);
-  const [darkMode, setDarkMode] = useState(initialTheme);
-  const [language, setLanguage] = useState(initialLanguage);
-
+  const { darkMode, setDarkMode, language, setLanguage } = useContext(SettingsContext);
   const { t } = useTranslation();
-
-  useEffect(() => {
-    localStorage.setItem('darkMode', JSON.stringify(darkMode));
-    darkMode
-      ? document.querySelector('html').setAttribute('data-theme', 'dark')
-      : document.querySelector('html').removeAttribute('data-theme');
-  }, [darkMode]);
-
-  useEffect(() => {
-    localStorage.setItem('language', JSON.stringify(language));
-  }, [language]);
 
   return (
     <div>

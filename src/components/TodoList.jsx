@@ -1,20 +1,20 @@
 import React, { useContext } from 'react';
 import TodoItem from './TodoItem';
-import { Fade } from 'react-awesome-reveal';
-import { Context } from '../context';
+import { Slide } from 'react-awesome-reveal';
+import { TodosContext } from '../context/todosContext';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const TodoList = () => {
-  const { state: todos, dispatch } = useContext(Context);
+  const { state: todos, dispatch } = useContext(TodosContext);
 
   return (
     <ul className='todo-list'>
       <TransitionGroup>
         {[...todos].reverse().map((todo) => (
           <CSSTransition key={todo.id} timeout={500} classNames='animate'>
-            <Fade direction='down' triggerOnce>
+            <Slide direction='down' triggerOnce>
               <TodoItem todo={todo} dispatch={dispatch} />
-            </Fade>
+            </Slide>
           </CSSTransition>
         ))}
       </TransitionGroup>

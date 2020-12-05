@@ -8,6 +8,6 @@ You will also see any lint errors in the console.
 
 ## Learn More
 
-To-do Project, React Context
+To-do Project, React TodosContext
 
 https://nalezhytyi.github.io/todo

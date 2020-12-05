@@ -1,13 +1,13 @@
 import React, { useContext, useState } from 'react';
-import { Context } from '../context';
+import Delay from './Delay';
+import { TodosContext } from '../context/todosContext';
 import { declOfNum } from '../helpers/declareOfNumber';
 import { useTranslation } from 'react-i18next';
 import { Fade } from 'react-awesome-reveal';
-import Delay from './Delay';
 
 const Footer = () => {
   const [checkAll, setCheckAll] = useState(false);
-  const { state: todos, dispatch } = useContext(Context);
+  const { state: todos, dispatch } = useContext(TodosContext);
 
   const { t } = useTranslation();
 
@@ -28,14 +28,10 @@ const Footer = () => {
     }
   };
 
-  let problem = `${t('footer.problem')}`;
-  let problems = `${t('footer.problems')}`;
-  let probleme = `${t('footer.probleme')}`;
-
   const counter = `${unfinishedTodos.length} ${declOfNum(unfinishedTodos.length, [
-    problem,
-    problems,
-    probleme,
+    `${t('footer.problem')}`,
+    `${t('footer.problems')}`,
+    `${t('footer.probleme')}`,
   ])}`;
 
   return (

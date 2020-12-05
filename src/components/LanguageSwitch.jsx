@@ -1,26 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-
-const languages = [
-  {
-    title: 'Русский',
-    value: 'ru',
-  },
-  {
-    title: 'Українська',
-    value: 'ua',
-  },
-  {
-    title: 'English',
-    value: 'en',
-  },
-  {
-    title: 'Deutsch',
-    value: 'de',
-  },
-];
+import { SettingsContext } from '../context/settingsContext';
 
 const LanguageSwitch = ({ language, setLanguage }) => {
+  const { languages } = useContext(SettingsContext);
   const { i18n } = useTranslation();
 
   const onLanguageHandle = (e) => {

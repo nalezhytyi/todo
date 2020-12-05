@@ -1,4 +1,4 @@
-export default function reducer(state, action) {
+export default function todosReducer(state, action) {
   switch (action.type) {
     case 'add':
       return [
