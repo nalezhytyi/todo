@@ -33,7 +33,12 @@ html {
     scroll-padding-top: 120px;
 }
 
+p, h1, h2, h3, h4, h5, h6 {
+    cursor: default;
+}
+
 body {
+    overflow-x: hidden;
     color: var(--text--main);
     background: var(--background--main);
 }

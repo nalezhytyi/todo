@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import ThemeSwitch from './ThemeSwitch';
 import LanguageSwitch from './LanguageSwitch';
 import { useTranslation } from 'react-i18next';
-import { Slide } from 'react-awesome-reveal';
+import { Fade } from 'react-awesome-reveal';
 
 export const initialTheme =
-  localStorage.getItem('darkMode') == null ? false : JSON.parse(localStorage.getItem('darkMode'));
+  localStorage.getItem('darkMode') == null ? true : JSON.parse(localStorage.getItem('darkMode'));
 export const initialLanguage =
   localStorage.getItem('language') == null ? 'ru' : JSON.parse(localStorage.getItem('language'));
 
@@ -40,21 +40,15 @@ const Settings = () => {
           {showSettings ? `${t('settings.hide')}` : `${t('settings.show')}`}
         </label>
       </div>
-      {showSettings ? (
-        <Slide direction='down'>
-          <ul>
-            <li>
-              <h4>{t('settings.title')}</h4>
-            </li>
-            <li>
-              <ThemeSwitch darkMode={darkMode} setDarkMode={setDarkMode} />
-            </li>
-            <li>
-              <LanguageSwitch language={language} setLanguage={setLanguage} />
-            </li>
-          </ul>
-        </Slide>
-      ) : null}
+      {showSettings && (
+        <Fade direction='down'>
+          <h4>
+            <i className='material-icons'>settings</i> {t('settings.title')}
+          </h4>
+          <ThemeSwitch darkMode={darkMode} setDarkMode={setDarkMode} />
+          <LanguageSwitch language={language} setLanguage={setLanguage} />
+        </Fade>
+      )}
     </div>
   );
 };

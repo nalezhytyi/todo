@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import TodoItem from './TodoItem';
-import { Slide } from 'react-awesome-reveal';
+import { Fade } from 'react-awesome-reveal';
 import { Context } from '../context';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
@@ -12,9 +12,9 @@ const TodoList = () => {
       <TransitionGroup>
         {[...todos].reverse().map((todo) => (
           <CSSTransition key={todo.id} timeout={500} classNames='animate'>
-            <Slide direction='down' triggerOnce>
+            <Fade direction='down' triggerOnce>
               <TodoItem todo={todo} dispatch={dispatch} />
-            </Slide>
+            </Fade>
           </CSSTransition>
         ))}
       </TransitionGroup>
