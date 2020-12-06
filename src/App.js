@@ -22,7 +22,7 @@ const App = () => {
           data-target='slide-out'
           className='btn-floating pulse btn-large cyan darken-4 waves-effect waves-light sidenav-trigger'
         >
-          <i className='material-icons'>menu</i>
+          <i className='material-icons'>vertical_split</i>
         </div>
       </div>
       <h1 className='title'>{t('title')}</h1>

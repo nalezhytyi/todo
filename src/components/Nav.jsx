@@ -42,7 +42,9 @@ const Nav = () => {
       </li>
       <div className='divider' />
       <li>
-        <div className='subheader nav-item'>{t('nav.theme')}</div>
+        <div className='subheader nav-item'>
+          <i className='material-icons small-icon'>brightness_4</i> {t('nav.theme')}
+        </div>
       </li>
       <li>
         <div className='nav-item'>
@@ -51,7 +53,9 @@ const Nav = () => {
       </li>
       <div className='divider' />
       <li>
-        <div className='subheader nav-item'>{t('nav.language')}</div>
+        <div className='subheader nav-item'>
+          <i className='material-icons small-icon'>language</i> {t('nav.language')}
+        </div>
       </li>
       <li>
         <div className='nav-item'>
