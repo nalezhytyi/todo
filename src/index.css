@@ -101,8 +101,8 @@ label {
   color: var(--text--main);
 }
 .sidenav_user .background img {
-  width: 120%;
-  opacity: 0.2;
+  width: 100%;
+  opacity: 0.3;
 }
 .sidenav_user .sidenav-close {
   position: absolute;

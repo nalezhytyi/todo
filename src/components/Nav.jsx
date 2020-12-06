@@ -28,7 +28,7 @@ const Nav = () => {
           <a href='mailto:kawory05@gmail.com'>kawory05@gmail.com</a>
         </span>
         <div className='sidenav-close'>
-          <i className='material-icons red-text'>close</i>
+          <i className='material-icons'>close</i>
         </div>
       </li>
       <li className='sidenav_nav-item'>
