@@ -12,55 +12,43 @@ const Nav = () => {
 
   return (
     <ul id='slide-out' className='sidenav'>
-      <li>
-        <div className='user-view'>
-          <div className='background'>
-            <img src={background} alt='background' />
-          </div>
+      <li className='sidenav_user user-view'>
+        <div className='background'>
+          <img src={background} alt='background' />
+        </div>
+        <a href='https://github.com/nalezhytyi' target='_blank' rel='noopener noreferrer'>
+          <img className='circle' src={avatar} alt='user' />
+        </a>
+        <span className='name'>
           <a href='https://github.com/nalezhytyi' target='_blank' rel='noopener noreferrer'>
-            <img className='circle' src={avatar} alt='user' />
+            Andrii Nalezhytyi
           </a>
-          <span className='name'>
-            <a href='https://github.com/nalezhytyi' target='_blank' rel='noopener noreferrer'>
-              Andrii Nalezhytyi
-            </a>
-          </span>
-          <span className='email'>
-            <a href='mailto:kawory05@gmail.com'>kawory05@gmail.com</a>
-          </span>
-          <div className='sidenav-close'>
-            <i className='material-icons red-text'>close</i>
-          </div>
+        </span>
+        <span className='email'>
+          <a href='mailto:kawory05@gmail.com'>kawory05@gmail.com</a>
+        </span>
+        <div className='sidenav-close'>
+          <i className='material-icons red-text'>close</i>
         </div>
       </li>
-      <li>
-        <div className='nav-item'>
-          <h4>
-            <i className='material-icons'>settings</i> {t('settings.title')}
-          </h4>
-        </div>
+      <li className='sidenav_nav-item'>
+        <h4>
+          <i className='material-icons'>settings</i> {t('settings.title')}
+        </h4>
       </li>
       <div className='divider' />
-      <li>
-        <div className='subheader nav-item'>
-          <i className='material-icons small-icon'>brightness_4</i> {t('nav.theme')}
-        </div>
+      <li className='sidenav_nav-item subheader'>
+        <i className='material-icons small-icon'>brightness_4</i> {t('nav.theme')}
       </li>
-      <li>
-        <div className='nav-item'>
-          <ThemeSwitch darkMode={darkMode} setDarkMode={setDarkMode} />
-        </div>
+      <li className='sidenav_nav-item'>
+        <ThemeSwitch darkMode={darkMode} setDarkMode={setDarkMode} />
       </li>
       <div className='divider' />
-      <li>
-        <div className='subheader nav-item'>
-          <i className='material-icons small-icon'>language</i> {t('nav.language')}
-        </div>
+      <li className='sidenav_nav-item subheader'>
+        <i className='material-icons small-icon'>language</i> {t('nav.language')}
       </li>
-      <li>
-        <div className='nav-item'>
-          <LanguageSwitch language={language} setLanguage={setLanguage} />
-        </div>
+      <li className='sidenav_nav-item'>
+        <LanguageSwitch language={language} setLanguage={setLanguage} />
       </li>
       <div className='divider' />
       <ul className='collapsible collapsible-accordion'>
@@ -68,22 +56,12 @@ const Nav = () => {
           <div className='collapsible-header'>
             <i className='material-icons'>arrow_drop_down</i>TBD...
           </div>
-          <div className='collapsible-body'>
-            <ul>
-              <li>
-                <div className='nav-item tbd'>Sign in and Sign up with Google.</div>
-              </li>
-              <li>
-                <div className='nav-item tbd'>Store todos in Firebase.</div>
-              </li>
-              <li>
-                <div className='nav-item tbd'>More languages.</div>
-              </li>
-              <li>
-                <div className='nav-item tbd'>Refactoring.</div>
-              </li>
-            </ul>
-          </div>
+          <ul className='collapsible-body'>
+            <li className='tbd'>Sign in and Sign up with Google.</li>
+            <li className='tbd'>Store todos in Firebase.</li>
+            <li className='tbd'>More languages.</li>
+            <li className='tbd'>Refactoring.</li>
+          </ul>
         </li>
       </ul>
     </ul>
