@@ -37,6 +37,10 @@ p, h1, h2, h3, h4, h5, h6 {
     cursor: default;
 }
 
+h4 {
+    margin: 0;
+}
+
 body {
     overflow-x: hidden;
     color: var(--text--main);
@@ -55,6 +59,21 @@ label {
     transition: 0.5s;
 }
 
+.divider {
+    background: var(--background--main);
+}
+
+.fixed-action-btn {
+    right: auto;
+    left: 15px;
+    bottom: 15px;
+}
+
+.background img {
+    width: 120%;
+    opacity: 0.2;
+}
+
 /*INPUTFIELD*/
 .form-input {
     padding: 0.5rem 0;
@@ -65,18 +84,46 @@ label {
     z-index: 10;
     background: var(--background--main);
     background: linear-gradient(0deg, rgba(var(--background--input), 0) 0%, rgba(var(--background--input), 1) 22%);
-
 }
 
 .input-field {
     flex: 1;
 }
 
-/*THEME SWITCH*/
-.switch {
-    margin: 30px 0;
+/*NAV*/
+.sidenav {
+    background: var(--background--elements);
 }
 
+.nav-item {
+    padding: 0 32px;
+}
+
+.sidenav h4, .sidenav .subheader {
+    color: var(--text--main);
+}
+
+.user-view {
+    position: relative;
+}
+
+.user-view >span > a {
+    color: var(--text--main);
+}
+
+.sidenav-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.tbd {
+    background: var(--background--main);
+
+}
+
+/*THEME SWITCH*/
 .switch label .lever {
     margin: 0 16px 0 4px;
 }
@@ -147,7 +194,7 @@ label {
 }
 
 .row {
-    margin: 3rem 0;
+    margin: 3rem 0 3.5rem;
 }
 
 .footer-wrapper h6, p {

@@ -35,7 +35,7 @@ const FormInput = () => {
         <span className='helper-text' data-success={t('formInput.addMore')} />
       </div>
       <div className='icons-group'>
-        <button className='btn-floating btn-large waves-effect' onClick={addTodo}>
+        <button className='btn-floating cyan darken-3 waves-effect' onClick={addTodo}>
           <i className='material-icons'>add</i>
         </button>
       </div>

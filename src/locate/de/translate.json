@@ -21,6 +21,10 @@
       "probleme": "probleme",
       "checkAll": "alles",
       "delete": "Löschen abgeschlossen"
+    },
+    "nav": {
+      "theme": "Thema",
+      "language": "Sprache"
     }
   }
 }

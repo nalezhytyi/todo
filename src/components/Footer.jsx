@@ -51,7 +51,7 @@ const Footer = () => {
           <p className='col s6 m4 l6 center'>{counter}</p>
           <button
             disabled={unfinishedTodos.length >= todos.length}
-            className='waves-effect waves-light btn-small col s12 m4 l3'
+            className='waves-effect waves-light red btn-small col s12 m4 l3'
             onClick={deleteTodos}
           >
             {t('footer.delete')}
