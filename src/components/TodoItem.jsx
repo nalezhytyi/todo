@@ -65,7 +65,7 @@ const TodoItem = ({ todo, dispatch }) => {
           />
         </label>
         <div className='icons-group'>
-          <i className='material-icons edit-icon' onClick={saveTodo}>
+          <i className={editedTodo ? 'material-icons edit-icon' : 'material-icons edit-icon red-text'} onClick={saveTodo}>
             {editedTodo ? 'save' : 'delete'}
           </i>
         </div>
