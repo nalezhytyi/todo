@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useReducer } from 'react';
+import React, { createContext, useEffect, useReducer, useState } from 'react';
 import todosReducer from './todosReducer';
 import dummyData from './dummyData';
 
@@ -9,10 +9,21 @@ const initialState =
 
 export const TodoProvider = ({ children }) => {
   const [state, dispatch] = useReducer(todosReducer, initialState);
+  const [checkAll, setCheckAll] = useState(false);
+
+  const unfinishedTodos = [...state].filter((todo) => todo.completed === false);
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(state));
   }, [state]);
 
-  return <TodosContext.Provider value={{ state, dispatch }}>{children}</TodosContext.Provider>;
+  useEffect(() => {
+    unfinishedTodos.length === 0 ? setCheckAll(true) : setCheckAll(false);
+  }, [unfinishedTodos.length]);
+
+  return (
+    <TodosContext.Provider value={{ state, dispatch, checkAll, setCheckAll, unfinishedTodos }}>
+      {children}
+    </TodosContext.Provider>
+  );
 };
