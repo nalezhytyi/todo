@@ -14,8 +14,8 @@ const LanguageSwitch = ({ language, setLanguage }) => {
 
   return (
     <ul className='switch'>
-      {languages.map(({ title, value }) => (
-        <li>
+      {languages.map(({ title, value }, index) => (
+        <li key={index}>
           <label>
             <input
               value={value}
