@@ -13,12 +13,17 @@ const App = () => {
 
   useEffect(() => {
     M.AutoInit();
+    setTimeout(() => {
+      const floatingButton = document.querySelector('#floatingButton');
+      floatingButton.classList.remove('pulse');
+    }, 7000)
   }, []);
 
   return (
     <div className='container'>
       <div className='fixed-action-btn'>
         <div
+          id='floatingButton'
           data-target='slide-out'
           className='btn-floating pulse btn-large cyan darken-4 waves-effect waves-light sidenav-trigger'
         >
