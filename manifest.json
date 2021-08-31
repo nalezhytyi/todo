@@ -19,8 +19,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/todo",
-  "scope": "/todo",
+  "start_url": ".",
   "display": "standalone",
   "theme_color": "#ccd0d0",
   "background_color": "#f0f5f5"
