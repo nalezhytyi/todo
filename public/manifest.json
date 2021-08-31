@@ -9,18 +9,17 @@
       "type": "image/x-icon"
     },
     {
-      "src": "apple-touch-icon.png",
+      "src": "logo192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "android-chrome-512x512.png",
+      "src": "logo512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "start_url": "/todo",
-  "scope": "/",
+  "start_url": ".",
   "display": "standalone",
   "theme_color": "#ccd0d0",
   "background_color": "#f0f5f5"
